@@ -1,11 +1,13 @@
 -- mês que mais vendeu
 SELECT 
-MONTH (v.data_venda) AS  mes,
-SUM(iv.quantidade * iv.preco_unitario) as faturamento_total
+MONTH(v.data_venda) AS mes,
+YEAR(v.data_venda) AS ano,
+SUM(iv.quantidade * iv.preco_unitario) AS faturamento_total
 FROM vendas v
 JOIN itens_venda iv ON v.id_venda = iv.id_venda
-GROUP BY MONTH (v.data_venda)
-ORDER BY mes;
+GROUP BY ano, mes
+ORDER BY faturamento_total DESC
+LIMIT 1;
 
 -- produto mais vendido
 SELECT 
