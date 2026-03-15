@@ -1,4 +1,4 @@
--- faturamento total
+-- mês que mais vendeu
 SELECT 
 MONTH (v.data_venda) AS  mes,
 SUM(iv.quantidade * iv.preco_unitario) as faturamento_total
