@@ -19,7 +19,7 @@ GROUP BY p.id_produto, p.nome
 ORDER BY mais_vendido DESC
 LIMIT 1;
 
--- top clientes
+-- clientes que mais compraram
 SELECT
 c.nome,
 SUM(iv.quantidade * iv.preco_unitario) AS valor_total_gasto
